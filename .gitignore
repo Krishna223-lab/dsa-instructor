@@ -1,0 +1,4 @@
+# Don't upload these folders/files to GitHub
+node_modules/
+.env
+npm-debug.log*
