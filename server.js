@@ -1,4 +1,6 @@
 // server.js
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
@@ -8,8 +10,9 @@ const app = express();
 const PORT = 3000;
 
 const genAI = new GoogleGenAI({
-  apiKey: "AIzaSyDYlci09MurXnexoQTxrPwHnyvooe3B0dI", // replace with your real Gemini API key
+  apiKey: process.env.GEMINI_API_KEY,
 });
+
 
 app.use(cors());
 app.use(bodyParser.json());
